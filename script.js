@@ -42,9 +42,15 @@ if (navigator.geolocation)
   );
 
 form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
   // clear input fields
 
-  e.preventDefault();
+  inputDistance.value =
+    inputCadence.value =
+    inputDuration.value =
+    inputElevation.value =
+      '';
 
   // Display marker
   console.log(mapEvent);
@@ -62,4 +68,9 @@ form.addEventListener('submit', function (e) {
     )
     .setPopupContent('workoout')
     .openPopup();
+});
+
+inputType.addEventListener('change', function () {
+  inputElevation.closest('.form__row').classList.toggle('form__row--hidden');
+  inputCadence.closest('.form__row').classList.toggle('form__row--hidden');
 });
