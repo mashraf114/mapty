@@ -108,7 +108,7 @@ class App {
     // console.log(this);
     e.preventDefault();
 
-    // clear input fields
+    // Clear input fields
     inputDistance.value =
       inputCadence.value =
       inputDuration.value =
