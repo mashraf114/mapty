@@ -168,19 +168,7 @@ class App {
 
     // Render workout on map as a marker
 
-    L.marker([lat, lng])
-      .addTo(this.#map)
-      .bindPopup(
-        L.popup({
-          maxWidth: 250,
-          minWidth: 100,
-          autoClose: false,
-          closeOnClick: false,
-          className: 'running-popup',
-        })
-      )
-      .setPopupContent('workoout')
-      .openPopup();
+    this.renderWorkoutMarker(workout);
 
     // Render workout on list
 
@@ -192,6 +180,22 @@ class App {
       inputDuration.value =
       inputElevation.value =
         '';
+  }
+
+  renderWorkoutMarker(workout) {
+    L.marker(workout.coords)
+      .addTo(this.#map)
+      .bindPopup(
+        L.popup({
+          maxWidth: 250,
+          minWidth: 100,
+          autoClose: false,
+          closeOnClick: false,
+          className: `${type}-popup`,
+        })
+      )
+      .setPopupContent(workout.type)
+      .openPopup();
   }
 }
 
