@@ -119,6 +119,8 @@ a:visited {
   padding: 1.5rem 2.75rem;
   margin-bottom: 1.75rem;
 
+  /* Add a dirty trick of removing the grid 
+  for 1 second with setTimeout  */
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem 2.5rem;
