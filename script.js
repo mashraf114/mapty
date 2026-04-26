@@ -258,7 +258,7 @@ class App {
         </li>
           `;
 
-    form.insertAdjacentElement('afterend', html);
+    form.insertAdjacentHTML('afterend', html);
   }
   _moveToPopup(e) {
     const workoutEl = e.target.closest('.workout');
