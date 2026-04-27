@@ -10,7 +10,7 @@ class Workout {
     this.distance = distance; // in km
     this.duration = duration; // in min
   }
-  _setDescripion() {
+  _setDescription() {
     // prettier-ignore
     const months = [
     'January',  'February','March', 'April',  'May',  'June',  'July',  'August',  'September',  'October',  'November',  'December',
@@ -31,7 +31,7 @@ class Running extends Workout {
     super(coords, distance, duration);
     this.cadence = cadence;
     this.calcPace();
-    this._setDescripion();
+    this._setDescription();
   }
 
   calcPace() {
@@ -47,6 +47,7 @@ class Cycling extends Workout {
     super(coords, distance, duration);
     this.elevationGain = elevationGain;
     this.calcSpeed();
+    this._setDescription();
   }
 
   calcSpeed() {
